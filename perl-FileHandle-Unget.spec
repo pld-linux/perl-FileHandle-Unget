@@ -6,19 +6,19 @@
 %define	pdir	FileHandle
 %define	pnam	Unget
 Summary:	FileHandle::Unget - FileHandle which supports multi-byte unget
-#Summary(pl.UTF-8):	
+Summary(pl.UTF-8):	FileHandle::Unget - FileHandle który wspiera wielobajtowe zwracanie znaków
 Name:		perl-FileHandle-Unget
-Version:	0.1622
+Version:	0.1623
 Release:	1
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/FileHandle/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	14c708f99adc22256a7b2566bf5c649f
-# generic URL, check or change before uncommenting
-#URL:		http://search.cpan.org/dist/FileHandle-Unget/
+# Source0-md5:	27df2a78e60e30b1950bbf41740eae13
+URL:		http://search.cpan.org/dist/FileHandle-Unget/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,10 +37,9 @@ reset if you ungetc after having read to the end of the file.
 NOTE: Using sysread() with ungetc() and other buffering functions is
 still a bad idea.
 
-
-
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+FileHandle::Unget działa dokładnie tak samo jak FileHandle, za wyjątkiem tego,
+że dostarcza wersję ungetc, która umożliwia na zwrócenie więcej niż jednego znaku.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
