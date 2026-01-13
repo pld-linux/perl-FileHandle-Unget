@@ -8,7 +8,7 @@ Summary:	FileHandle::Unget - FileHandle which supports multi-byte unget
 Summary(pl.UTF-8):	FileHandle::Unget - FileHandle który wspiera wielobajtowe zwracanie znaków
 Name:		perl-FileHandle-Unget
 Version:	0.1623
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/FileHandle/%{pdir}-%{pnam}-%{version}.tar.gz
